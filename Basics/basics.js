@@ -129,10 +129,116 @@ console.log(fib(10));
 function missingNum(num){
   let sum = 0
 
-  for(let i = 0; i <= num.length ; i++){
+  for(let i = 0; i < num.length ; i++){
     sum = sum + num[i];
   }
   return num.length*(num.length+1)/2 - sum;
 }
 
 console.log(missingNum([0,7,5,6,2,3,1]))
+
+                        //OR
+    
+function missingNums(num){
+  return num.length*(num.length+1)/2 - num.reduce((acc,nums) => nums + acc)
+}
+console.log(missingNums([0,7,5,6,2,3,1]))
+
+
+
+
+
+
+                           // Question 7: Count Odd Numbers in an Interval Range
+
+// low = 3 , high = 7    interval = 3
+// low = 8 , high = 10  interval = 1
+
+
+ var countOdds = function(low, high) {
+   if(low% 2 == 0 && high%2 == 0){
+     return Math.floor((high - low)/2)
+   }else{
+         return Math.ceil((high - low+1)/2)
+        }
+  };
+
+  console.log(countOdds(3,7))
+
+                      //OR
+                  
+
+function countOdd(low,high){
+  return Math.floor((high + 1)/2) - Math.floor(low/2)
+}
+
+console.log(countOdd(8,10))
+
+
+
+
+                                   // Question 8: Power of Two
+//Given an integer n, return true if it is a power of two. Otherwise, return false.
+//An integer n is a power of two, if there exists an integer x such that n == 2x.
+
+
+/*Input: n = 1
+Output: true
+Explanation: 20 = 1   
+
+Input: n = 16
+Output: true
+Explanation: 24 = 16
+
+Input: n = 3
+Output: false
+ 
+input: n = 6
+output: false*/ 
+
+
+var isPowerOfTwo = function(n) {
+  return n > 0 && (n & (n-1)) === 0;
+}
+
+console.log(isPowerOfTwo(6))
+console.log(isPowerOfTwo(1))
+console.log(isPowerOfTwo(16))
+console.log(isPowerOfTwo(3))
+
+
+                              // Question 9: Find Square root of a Number  (Sqrt(x))
+
+/*Given a non-negative integer x, return the square root of x rounded down to the nearest integer. The returned integer should be non-negative as well.
+You must not use any built-in exponent function or operator.
+
+Input: x = 4
+Output: 2
+Explanation: The square root of 4 is 2, so we return 2.
+
+Input: x = 8
+Output: 2
+Explanation: The square root of 8 is 2.82842..., and since we round it down to the nearest integer, 2 is returned.*/
+
+
+var mySqrt = function(x) {
+  return Math.floor(Math.sqrt(x))
+}
+s
+console.log(mySqrt(4))
+console.log(mySqrt(8))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
